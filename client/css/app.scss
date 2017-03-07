@@ -5,7 +5,7 @@ body {
 }
 
 .card .card-image .card-title {
-  @include border-radius(10px);
+  border-radius: 10px;
   background-color: rgba(0,0,0,.5);
   margin: 15px;
   padding: 5px 15px;

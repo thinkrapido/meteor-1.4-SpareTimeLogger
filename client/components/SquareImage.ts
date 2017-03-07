@@ -1,14 +1,11 @@
 
-import {Component, View, ElementRef, Inject, AfterViewInit, ViewChild} from 'angular2/core';
+import {Component, ElementRef, Inject, AfterViewInit, ViewChild} from '@angular/core';
 
 declare var $: any;
 
 @Component({
   selector: 'square-image',
   inputs: ['src'],
-})
-
-@View({
   template: `
     <div #square
       class="square"

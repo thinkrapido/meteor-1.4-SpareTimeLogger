@@ -4,16 +4,11 @@ let _ = lodash;
 
 import {Projects} from '../../collections/projects';
 
-import {Component, View} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({
 
   selector: 'statistics',
-
-})
-
-@View({
-
   templateUrl: '/client/view/statistics.html',
 
 })
@@ -99,7 +94,11 @@ export class Statistics {
   }
 
   iterate(n) {
-    return _.slice(Array(n).fill().map((x, i) => i), 1);
+    let out = [];
+    for (let i = 1; i<n; i++) {
+      out.push(i);
+    }
+    return out;
   }
 
   isString(value) {
