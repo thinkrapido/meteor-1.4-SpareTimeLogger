@@ -1,0 +1,41 @@
+
+<div class="container">
+<h1>SpareTimeLogger</h1>
+<div class="row">
+  <div class="col s12 m3" *ngFor="#project of projects">
+    <div class="card">
+      <div class="card-image">
+        <square-image [src]="project.pic()"></square-image>
+        <span class="card-title align-right">{{project.totalHours()}} hs</span>
+      </div>
+      <div class="card-content center-align">
+        <div class="project-name">{{project.name()}}</div>
+        <div>
+        <button class="btn-floating btn-large waves-effect waves-light red" (click)="project.addHours(1);">1</button>
+        <button class="btn-floating btn-large waves-effect waves-light red" (click)="project.addHours(2);">2</button>
+        <button class="btn-floating btn-large waves-effect waves-light red" (click)="project.addHours(3);">3</button>
+        <button class="btn-floating btn-large waves-effect waves-light red" (click)="project.addHours(4);">4</button>
+        </div>
+      </div>
+      <div class="card-action">
+        <a href="#">This is a link</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m3">
+    <div class="card">
+      <div class="card-image">
+        <square-image [src]="'/project-add.png'"></square-image>
+      </div>
+      <div class="card-action">
+        <div class="input-field">
+          <input id="add-project" type="text" #box (keyup.enter)="addProject(box.value);box.value='';"/>
+          <label for="add-project">add new project</label>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<statistics></statistics>
+</div>

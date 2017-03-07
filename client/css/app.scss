@@ -1,0 +1,58 @@
+
+body {
+  background-color: desaturate(lighten(salmon, 10%), 70%);
+  padding-bottom: 3em;
+}
+
+.card .card-image .card-title {
+  @include border-radius(10px);
+  background-color: rgba(0,0,0,.5);
+  margin: 15px;
+  padding: 5px 15px;
+  left: inherit;
+  right: 0;
+}
+
+.card-content button {
+  margin-top: .2em;
+}
+.project-name {
+//  font-weight: bold;
+  margin-bottom: 1em;
+  font-size: 130%;
+}
+
+table {
+  background: white;
+  tfoot, thead {
+    font-weight: bold;
+  }
+  tbody td {
+    span.icon {
+      height: 15px;
+      width: 15px;
+      display: inline-block;
+      background-image: url(/project-dummy.png);
+      background-position: center center;
+      background-size: cover;
+      margin: 0 3px;
+    }
+    div > div {
+      text-align: center;
+    }
+  }
+  td {
+    border: 1px solid #eee;
+    vertical-align: top;
+    text-align: center;
+    width: 12.5%;
+    &:first-child {
+      text-align: left;
+      font-weight: bold;
+    }
+    &:last-child {
+      font-weight: bold;
+    }
+  }
+
+}

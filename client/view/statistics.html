@@ -1,0 +1,43 @@
+<table>
+
+  <thead>
+    <tr *ngFor="#line of header()">
+      <td *ngFor="#cell of line; #col = index">
+        <div *ngIf="cell">
+          {{cell}}
+        </div>
+      </td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="#line of body()">
+      <td *ngFor="#cell of line; #col = index" [ngSwitch]="col">
+        <div *ngSwitchWhen="0">
+          {{cell}}
+        </div>
+        <div *ngSwitchWhen="line.length - 1">
+          {{cell}} hs
+        </div>
+        <div *ngSwitchDefault>
+          <div *ngIf="cell !== false">{{cell.hours}} hs</div>
+          <span *ngIf="cell !== false" *ngFor="#i of iterate(cell.hours)" class="icon"></span>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+
+  <tfoot>
+    <tr *ngFor="#line of footer()">
+      <td *ngFor="#cell of line; #col = index">
+        <div *ngIf="isString(cell)">
+          {{cell}}
+        </div>
+        <div *ngIf="hasHours(cell)">
+          {{cell}} hs
+        </div>
+      </td>
+    </tr>
+  </tfoot>
+
+</table>
